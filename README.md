@@ -16,14 +16,18 @@ Represent each website with a probability vector
 ​
 Collect all website vectors into the columns of a matrix M.
 Because each column sums to 1, **M is column-stochastic.
+
 ➕Perron–Frobenius Theorem:
 Any non-negative column-stochastic matrix has an eigenvalue of 1; all other eigenvalues with absolute value less than 1.
 Matrix M therefore models a Markov chain whose steady-state distribution gives the long-run probability of being on each website.**
 These final probabilities are used as the website rankings.
 
+
 **⚠️Problems:**
+
 ❌Problem 1: Closed-Link Loops
 A subset of websites may only link to each other, inflating their importance by creating a closed feedback loop.
+
 ❌Problem 2: Dead Ends
 A website with no outgoing links has a column that sums to 0, breaking the column-stochastic condition and preventing Markov chain convergence.
 
